@@ -4,21 +4,21 @@ const mail = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: 'belloayoola20@gmai.com',
-        pass: ''
+        pass: 'kyld ioqn phqu zlrv'
     }
 });
 
 const mailOption = {
     from: 'belloayoola20@gmail.com',
-    to: '',
+    to: 'izuchi.alaneme@gmail.com',
     subject: 'This is me exploring Node.js',
     text: 'This is how to use Nodemailer in Node.js'
 };
 
-Transport.sendmail((err, info) => {
-    if (err){
+mail.sendMail(mailOption, (error, info) => {
+    if (error){
         console.log(error)
     }else{
-        console.log(`Email sent ${info.response}`);
+        console.log('Email sent' + info.response);
     }
 });
